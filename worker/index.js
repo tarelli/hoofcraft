@@ -51,6 +51,10 @@ function encodeBase64(value) {
 
 function normalizeScores(value) {
   if (!Array.isArray(value)) return [];
+  return trimScores(sortScores(value));
+}
+
+function sortScores(value) {
   return value
     .filter(entry => entry && typeof entry.name === 'string' && Number.isFinite(Number(entry.money)))
     .map(entry => ({
@@ -59,8 +63,13 @@ function normalizeScores(value) {
       money: Math.round(Number(entry.money) * 100) / 100,
       createdAt: String(entry.createdAt || new Date().toISOString()),
     }))
-    .sort((a, b) => b.money - a.money || a.name.localeCompare(b.name))
-    .slice(0, MAX_SCORES);
+    .sort((a, b) => b.money - a.money || a.name.localeCompare(b.name));
+}
+
+// Keep both ends of the table: the richest runs and the deepest debts.
+function trimScores(scores) {
+  if (scores.length <= MAX_SCORES * 2) return scores;
+  return [...scores.slice(0, MAX_SCORES), ...scores.slice(-MAX_SCORES)];
 }
 
 async function readScores(token) {
