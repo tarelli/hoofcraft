@@ -47,6 +47,7 @@
     .tool.ready{background:#6d5340;border-color:#f4b942;animation:toolReady .8s steps(2,end) infinite}@keyframes toolReady{50%{background:#8a6a45;box-shadow:0 0 0 3px #f4b942}}
     .tool.locked.done{opacity:.75;filter:none;background:#3f5a3c;color:#d7e8cf}
     .side-hud{border-top:0!important}
+    .countdown-chip small,.money-chip small{display:none}.countdown-chip{place-items:center;padding:5px 12px}.countdown-chip b{font-size:17px}
     .tool em{font-style:normal}.tool>span:last-child{min-width:0}.tool.locked:hover{transform:none;box-shadow:3px 3px 0 #1b1210}
     .tool:active:not(.locked){transform:translate(2px,2px);box-shadow:1px 1px 0 #1b1210}
     @media(hover:hover){.play:not(:disabled):hover,.lang:hover,.icon-btn:hover,.bet:hover,.horse-choice:hover{filter:brightness(1.08)}}
@@ -108,7 +109,7 @@
       header{align-items:center;margin-bottom:8px;gap:10px}h1{font-size:clamp(20px,7vw,34px);letter-spacing:-1px;text-shadow:3px 3px 0 #7a331f}.tag,.badge{display:none}
       .header-actions{gap:8px}.lang{font-size:9px;padding:9px}
       .game-shell{grid-template-columns:1fr;gap:10px}.stage,.side{padding:7px;box-shadow:4px 4px 0 rgba(0,0,0,.38)}
-      .campaign{grid-template-columns:minmax(0,1fr) auto;gap:5px;margin-bottom:6px}.campaign-chip{font-size:7px;padding:6px}.money-chip{grid-column:1/-1;padding:6px}.money-chip b{font-size:22px}
+      .campaign{grid-template-columns:minmax(0,1fr) auto;gap:5px;margin-bottom:6px}.campaign-chip{font-size:7px;padding:6px}.money-chip{grid-column:1/-1;padding:6px}.money-chip b{font-size:24px}.countdown-chip b{font-size:15px}
       .topbar{gap:4px;margin-bottom:6px}.step-pill{font-size:7px;padding:7px 2px}
       .coach{margin-bottom:6px;padding:7px 8px 10px}.coach label{font-size:8px}.coach .hint{font-size:18px;min-height:2em}
       .screen{border-width:3px}
@@ -148,11 +149,11 @@
       .stage>.screen{flex:0 1 auto;min-height:120px;width:100%;background:#17100e}
       h1{font-size:22px}
       .stage>.screen{margin-top:1px}
-      .side{flex:1 1 0;min-height:104px;max-height:210px;container-type:size;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px}
+      .side{flex:1 1 0;min-height:104px;max-height:min(210px,41vw);container-type:size;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px;align-items:center}
       .tools{height:100%;grid-template-columns:repeat(6,minmax(0,1fr));grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:5px}.tool{grid-column:span 2}.tool:nth-child(n+4){grid-column:span 3}
-      .tool{min-height:0;padding:3px 2px;gap:4px;border-width:2px;box-shadow:2px 2px 0 #1b1210}.icon svg{width:clamp(22px,22cqh,34px);height:clamp(22px,22cqh,34px)}.tool strong{font-size:6px;overflow-wrap:normal;white-space:nowrap}
+      .tool{min-height:0;padding:3px 2px;gap:4px;border-width:2px;box-shadow:2px 2px 0 #1b1210}.icon svg{width:clamp(22px,22cqh,34px);height:clamp(22px,22cqh,34px)}.tool strong{font-size:6px;overflow-wrap:normal;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:clip}.tool>span:last-child{max-width:100%;overflow:hidden}
       .side-hud{display:block;margin:0;padding:0;border:0}
-      .horse-comms{display:block;width:100cqh;height:100cqh;padding:3px;border-width:3px;box-shadow:0 0 0 2px #6e5842}.horse-comms:before,.horse-comms:after,.comms-tag{display:none}
+      .horse-comms{display:block;width:min(100cqh,44cqw);height:min(100cqh,44cqw);padding:3px;border-width:3px;box-shadow:0 0 0 2px #6e5842}.horse-comms:before,.horse-comms:after,.comms-tag{display:none}
       .portrait-screen{width:100%;height:100%;border-width:2px}
       .modal:not(.review-modal):not(.race-modal):not(.board-modal){position:fixed;z-index:120;padding:14px}
       .modal>.card:not(.review-card):not(.race-card):not(.board-card){max-height:100%;overflow:auto;padding:18px 14px}
@@ -161,7 +162,7 @@
     @media(max-width:760px) and (orientation:portrait) and (max-height:620px){
       header{margin-bottom:5px}h1{font-size:18px}.icon-btn{font-size:18px;padding:3px 8px 5px}.lang{padding:7px}
       .campaign{grid-template-columns:minmax(0,1fr) auto auto}.money-chip{grid-column:auto;padding:4px 8px}.money-chip b{font-size:13px}.money-chip small{display:none}
-      .campaign-chip{font-size:6px;padding:5px}.countdown-chip b{font-size:11px}
+      .campaign-chip{font-size:6px;padding:5px}.countdown-chip b{font-size:13px}
       .side{min-height:84px}
     }
     /* ---------- phones held sideways ---------- */
@@ -175,7 +176,7 @@
       .screen{grid-column:1;grid-row:1/3;align-self:start;width:min(56vw,calc((100dvh - 50px)*4/3));border-width:3px}
       .campaign{grid-column:2;grid-row:1;margin:0}
       .side{grid-column:2;grid-row:2;min-height:0;padding:5px;box-shadow:3px 3px 0 rgba(0,0,0,.38);container-type:size;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px;align-items:center}
-      .campaign{display:flex;flex-wrap:wrap;gap:4px}.campaign-chip{flex:1 1 auto;font-size:7px;padding:5px}.money-chip{flex-basis:100%;padding:4px}.money-chip b{font-size:18px}.countdown-chip b{font-size:11px}
+      .campaign{display:flex;flex-wrap:wrap;gap:4px}.campaign-chip{flex:1 1 auto;font-size:7px;padding:5px}.money-chip{flex-basis:100%;padding:4px}.money-chip b{font-size:18px}.countdown-chip b{font-size:13px}
       .topbar{gap:3px}.step-pill{font-size:5px;padding:6px 1px}
       .coach{grid-template-columns:minmax(0,1fr);padding:6px 7px 9px}.coach label{font-size:7px}.coach .trait{font-size:6px;padding:4px;justify-self:start}.coach .hint{font-size:17px}
       .step-pill{white-space:nowrap;overflow:hidden}
@@ -252,7 +253,7 @@ function applyLanguageBase(){document.documentElement.lang=lang;document.querySe
 function paintWallet(value){ui.money.textContent=cash(value);ui.score.textContent=cash(value)}
 function animateWallet(){if(walletRaf)return;let tick=()=>{let gap=money-walletDisplay;if(Math.abs(gap)<.005){walletDisplay=money;paintWallet(walletDisplay);walletRaf=0;return}walletDisplay+=gap*.24;paintWallet(walletDisplay);walletRaf=requestAnimationFrame(tick)};walletRaf=requestAnimationFrame(tick)}
 function changeMoney(delta,trackHorse=false){delta=Math.round(delta*100)/100;if(!delta)return;if(trackHorse)horseEarned=Math.round((horseEarned+delta)*100)/100;money=Math.round((money+delta)*100)/100;ui.walletGain.textContent=`${delta>0?'+':'−'}${cash(Math.abs(delta))}`;let state=delta>0?'earning':'spending';ui.moneyBox.classList.remove('earning','spending');void ui.moneyBox.offsetWidth;ui.moneyBox.classList.add(state);clearTimeout(walletPulseTimer);walletPulseTimer=setTimeout(()=>ui.moneyBox.classList.remove(state),720);animateWallet()}
-function updateCampaignUI(){let t=campaignCopy[lang];ui.day.textContent=`${t.day} ${day}/7`;ui.horse.textContent=`${t.day} ${day}/7 · ${started||dayHorses.length?horseName:t.horse} ${horseNumber}/5`;ui.moneyLabel.textContent=raceCopy[lang].money;ui.money.title=raceCopy[lang].money;if(!walletRaf){walletDisplay=money;paintWallet(walletDisplay)}ui.deadlineLabel.textContent=clockCopy[lang].clock;ui.deadline.textContent=formatTime(dayTimeLeft);ui.deadlineBox.classList.toggle('danger',dayTimeLeft<=60&&started);}
+function updateCampaignUI(){let t=campaignCopy[lang];ui.day.textContent=`${t.day} ${day}/7`;ui.horse.textContent=`${t.day} ${day}/7 · ${started||dayHorses.length?horseName:t.horse} ${horseNumber}/5`;ui.moneyLabel.textContent=raceCopy[lang].money;ui.money.title=raceCopy[lang].money;if(!walletRaf){walletDisplay=money;paintWallet(walletDisplay)}ui.deadlineLabel.textContent=clockCopy[lang].clock;ui.deadlineBox.title=clockCopy[lang].clock;ui.deadlineBox.setAttribute('aria-label',clockCopy[lang].clock);ui.moneyBox.setAttribute('aria-label',raceCopy[lang].money);ui.deadline.textContent=formatTime(dayTimeLeft);ui.deadlineBox.classList.toggle('danger',dayTimeLeft<=60&&started);}
 function renderModal(){let t=campaignCopy[lang],title=document.querySelector('#winTitle'),result=document.querySelector('#result'),button=document.querySelector('#again'),rank=document.querySelector('#rankLine');rank.textContent='';if(modalMode==='horse'){let h=dayHorses.at(-1);title.textContent=t.horseDone;result.textContent=h?raceCopy[lang].horseResult(h.name,h.quality,h.earned):'';button.textContent=t.nextHorse}else if(modalMode==='day'){title.textContent=t.dayDone;result.textContent=t.finishDay(day);button.textContent=t.nextDay}else if(modalMode==='fail'){title.textContent=clockCopy[lang].timeoutTitle;result.textContent=clockCopy[lang].timeout(day,horseNumber);button.textContent=t.retry;rank.textContent=lastRank?tr('rank')(lastRank):''}else{title.textContent=t.weekDone;result.textContent=t.week(cash(money));button.textContent=raceCopy[lang].continue;rank.textContent=lastRank?tr('rank')(lastRank):''}}
 function applyLanguage(){applyLanguageBase();updateCampaignUI();if(!ui.win.hidden)renderModal();if(!ui.review.hidden)renderDayReview();document.querySelector('#celebrationText').textContent=raceLiveCopy[lang].victory;if(!ui.race.hidden){document.querySelector('#raceTitle').textContent=raceCopy[lang].derby;if(!raceRunning)renderRaceResult()}if(!document.querySelector('#debtEnding').hidden)renderDebtEnding();if(!document.querySelector('#firedEnding').hidden)renderFiredEnding()}
 function localScores(){try{let v=JSON.parse(localStorage.getItem('hoofcraft-money-scores')||'[]');return Array.isArray(v)?v:[]}catch{return[]}}
