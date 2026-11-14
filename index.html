@@ -47,7 +47,11 @@
     .tool.ready{background:#6d5340;border-color:#f4b942;animation:toolReady .8s steps(2,end) infinite}@keyframes toolReady{50%{background:#8a6a45;box-shadow:0 0 0 3px #f4b942}}
     .tool.locked.done{opacity:.75;filter:none;background:#3f5a3c;color:#d7e8cf}
     .side-hud{border-top:0!important}
-    .countdown-chip small,.money-chip small{display:none}.countdown-chip{place-items:center;padding:5px 12px}.countdown-chip b{font-size:17px}
+    .countdown-chip small,.money-chip small{display:none}.countdown-chip{place-items:center;padding:5px 14px}.countdown-chip b{font-size:22px;text-shadow:3px 3px #2a1d18}
+    .progress-chip{display:flex;align-items:center;gap:10px;padding:4px 9px 4px 6px}
+    .cal{display:grid;justify-items:center;min-width:36px;padding:3px 3px 4px;background:#f3dfb4;color:#201814;border:3px solid #17100e;border-top:8px solid #a84f32;box-shadow:2px 2px 0 #17100e}.cal b{font:17px/1 "Press Start 2P",monospace}
+    .pips{display:flex;gap:1px;margin-top:3px}.pips i{width:3px;height:3px;background:#cdb88c}.pips i.on{background:#4f7a48}.pips i.now{background:#a84f32}
+    .shoes{display:flex;gap:4px}.shoes svg{width:19px;height:19px;shape-rendering:crispEdges;color:#2a1d18}.shoes svg.on{color:var(--gold);filter:drop-shadow(1px 1px 0 #7a331f)}.shoes svg.now{color:#fff1a6;animation:shoeNow .8s steps(2,end) infinite}@keyframes shoeNow{50%{color:#8c6d57}}
     .tool em{font-style:normal}.tool>span:last-child{min-width:0}.tool.locked:hover{transform:none;box-shadow:3px 3px 0 #1b1210}
     .tool:active:not(.locked){transform:translate(2px,2px);box-shadow:1px 1px 0 #1b1210}
     @media(hover:hover){.play:not(:disabled):hover,.lang:hover,.icon-btn:hover,.bet:hover,.horse-choice:hover{filter:brightness(1.08)}}
@@ -101,7 +105,7 @@
     .race-board{display:none;list-style:none;margin:8px 0 0;padding:0;gap:5px}
     .race-board li{display:grid;grid-template-columns:22px 14px minmax(0,86px) minmax(0,1fr);align-items:center;gap:7px;padding:7px 8px;background:#241a16;border:3px solid #3b2a22;font:8px/1 "Press Start 2P",monospace;text-align:left}
     .race-board li.you{border-color:#f4b942;color:#fff1a6}.race-board .sw{width:14px;height:14px;border:2px solid #050404}.race-board .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.race-board .tr{height:8px;background:#0a0706;border:2px solid #050404}.race-board .tr i{display:block;height:100%;width:0;background:#a84f32}.race-board li.you .tr i{background:#f4b942}
-    @media(prefers-reduced-motion:reduce){.tool.ready,.countdown-chip.danger,.blood-rain i,.pink-slips i,.debt-ending:before{animation:none}}
+    @media(prefers-reduced-motion:reduce){.shoes svg.now,.tool.ready,.countdown-chip.danger,.blood-rain i,.pink-slips i,.debt-ending:before{animation:none}}
     /* ---------- phones & small tablets ---------- */
     @media(max-width:760px){
       body{font-size:20px}
@@ -109,7 +113,7 @@
       header{align-items:center;margin-bottom:8px;gap:10px}h1{font-size:clamp(20px,7vw,34px);letter-spacing:-1px;text-shadow:3px 3px 0 #7a331f}.tag,.badge{display:none}
       .header-actions{gap:8px}.lang{font-size:9px;padding:9px}
       .game-shell{grid-template-columns:1fr;gap:10px}.stage,.side{padding:7px;box-shadow:4px 4px 0 rgba(0,0,0,.38)}
-      .campaign{grid-template-columns:minmax(0,1fr) auto;gap:5px;margin-bottom:6px}.campaign-chip{font-size:7px;padding:6px}.money-chip{grid-column:1/-1;padding:6px}.money-chip b{font-size:24px}.countdown-chip b{font-size:15px}
+      .campaign{grid-template-columns:auto minmax(0,1fr);gap:5px;margin-bottom:6px}.campaign-chip{font-size:7px;padding:6px}.money-chip{grid-column:1/-1;padding:6px}.money-chip b{font-size:24px}.countdown-chip b{font-size:28px}
       .topbar{gap:4px;margin-bottom:6px}.step-pill{font-size:7px;padding:7px 2px}
       .coach{margin-bottom:6px;padding:7px 8px 10px}.coach label{font-size:8px}.coach .hint{font-size:18px;min-height:2em}
       .screen{border-width:3px}
@@ -149,20 +153,20 @@
       .stage>.screen{flex:0 1 auto;min-height:120px;width:100%;background:#17100e}
       h1{font-size:22px}
       .stage>.screen{margin-top:1px}
-      .side{flex:1 1 0;min-height:104px;max-height:min(210px,41vw);container-type:size;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px;align-items:center}
+      .side{flex:1 1 0;min-height:104px;container-type:size;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px;align-items:center}
       .tools{height:100%;grid-template-columns:repeat(6,minmax(0,1fr));grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:5px}.tool{grid-column:span 2}.tool:nth-child(n+4){grid-column:span 3}
       .tool{min-height:0;padding:3px 2px;gap:4px;border-width:2px;box-shadow:2px 2px 0 #1b1210}.icon svg{width:clamp(22px,22cqh,34px);height:clamp(22px,22cqh,34px)}.tool strong{font-size:6px;overflow-wrap:normal;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:clip}.tool>span:last-child{max-width:100%;overflow:hidden}
       .side-hud{display:block;margin:0;padding:0;border:0}
-      .horse-comms{display:block;width:min(100cqh,44cqw);height:min(100cqh,44cqw);padding:3px;border-width:3px;box-shadow:0 0 0 2px #6e5842}.horse-comms:before,.horse-comms:after,.comms-tag{display:none}
-      .portrait-screen{width:100%;height:100%;border-width:2px}
+      .horse-comms{display:block;width:min(100cqh,44cqw);height:100cqh;padding:3px;border-width:3px;box-shadow:0 0 0 2px #6e5842}.horse-comms:before,.horse-comms:after,.comms-tag{display:none}
+      .portrait-screen{width:100%;height:100%;aspect-ratio:auto;border-width:2px;background:#0b1715}.horse-portrait{object-fit:contain}
       .modal:not(.review-modal):not(.race-modal):not(.board-modal){position:fixed;z-index:120;padding:14px}
       .modal>.card:not(.review-card):not(.race-card):not(.board-card){max-height:100%;overflow:auto;padding:18px 14px}
       .card .play{margin-top:8px}
     }
     @media(max-width:760px) and (orientation:portrait) and (max-height:620px){
       header{margin-bottom:5px}h1{font-size:18px}.icon-btn{font-size:18px;padding:3px 8px 5px}.lang{padding:7px}
-      .campaign{grid-template-columns:minmax(0,1fr) auto auto}.money-chip{grid-column:auto;padding:4px 8px}.money-chip b{font-size:13px}.money-chip small{display:none}
-      .campaign-chip{font-size:6px;padding:5px}.countdown-chip b{font-size:13px}
+      .campaign{grid-template-columns:auto minmax(0,1fr) auto}.progress-chip{gap:6px;padding:3px 6px 3px 4px}.shoes{gap:2px}.shoes svg{width:14px;height:14px}.cal{min-width:30px;border-top-width:6px}.cal b{font-size:13px}.money-chip{grid-column:auto;padding:4px 8px}.money-chip b{font-size:13px}.money-chip small{display:none}
+      .campaign-chip{font-size:6px;padding:5px}.countdown-chip b{font-size:15px}
       .side{min-height:84px}
     }
     /* ---------- phones held sideways ---------- */
@@ -176,7 +180,7 @@
       .screen{grid-column:1;grid-row:1/3;align-self:start;width:min(56vw,calc((100dvh - 50px)*4/3));border-width:3px}
       .campaign{grid-column:2;grid-row:1;margin:0}
       .side{grid-column:2;grid-row:2;min-height:0;padding:5px;box-shadow:3px 3px 0 rgba(0,0,0,.38);container-type:size;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px;align-items:center}
-      .campaign{display:flex;flex-wrap:wrap;gap:4px}.campaign-chip{flex:1 1 auto;font-size:7px;padding:5px}.money-chip{flex-basis:100%;padding:4px}.money-chip b{font-size:18px}.countdown-chip b{font-size:13px}
+      .campaign{display:flex;flex-wrap:wrap;gap:4px}.campaign-chip{flex:1 1 auto;font-size:7px;padding:5px}.money-chip{flex-basis:100%;padding:4px}.money-chip b{font-size:18px}.countdown-chip b{font-size:18px}.shoes svg{width:15px;height:15px}.shoes{gap:3px}
       .topbar{gap:3px}.step-pill{font-size:5px;padding:6px 1px}
       .coach{grid-template-columns:minmax(0,1fr);padding:6px 7px 9px}.coach label{font-size:7px}.coach .trait{font-size:6px;padding:4px;justify-self:start}.coach .hint{font-size:17px}
       .step-pill{white-space:nowrap;overflow:hidden}
@@ -204,7 +208,7 @@
   <header><div><h1>HOOFCRAFT</h1><p class="tag" id="tagline">A tiny farrier's tale — steady hands, happy horse.</p></div><div class="header-actions"><button class="icon-btn" id="sound" aria-label="Toggle sound" aria-pressed="true">♪</button><button class="lang" id="langToggle" aria-label="Switch language">IT</button></div></header>
   <section class="game-shell">
     <div class="stage">
-      <div class="campaign" aria-label="Weekly progress"><span class="campaign-chip sun-chip" id="horseStat">HORSE 1/5 · DAWN</span><div class="campaign-chip countdown-chip" id="deadlineBox"><small id="deadlineLabel">DAY CLOCK</small><b id="deadline">3:00</b><em class="time-change" id="timeChange" aria-hidden="true">+5 SEC</em></div><span class="campaign-chip money-chip" id="moneyBox"><small id="moneyLabel">WALLET</small><b id="moneyStat">$0.00</b><em class="wallet-gain" id="walletGain" aria-hidden="true">+$0.50</em></span></div>
+      <div class="campaign" aria-label="Weekly progress"><div class="campaign-chip progress-chip" id="horseStat" role="img"></div><div class="campaign-chip countdown-chip" id="deadlineBox"><small id="deadlineLabel">DAY CLOCK</small><b id="deadline">3:00</b><em class="time-change" id="timeChange" aria-hidden="true">+5 SEC</em></div><span class="campaign-chip money-chip" id="moneyBox"><small id="moneyLabel">WALLET</small><b id="moneyStat">$0.00</b><em class="wallet-gain" id="walletGain" aria-hidden="true">+$0.50</em></span></div>
       <div class="screen"><canvas id="game" width="640" height="480" aria-label="Interactive horse hoof"></canvas>
         <div class="modal" id="welcome"><div class="card"><h3 id="welcomeTitle">THE MARE NEEDS YOU!</h3><p id="welcomeText">Clean, trim, and fit a fresh shoe to Clover's muddy hoof.</p><input class="name-input" id="playerName" maxlength="10" autocomplete="off" aria-label="Player name" placeholder="YOUR NAME"><button class="play" id="start">START SHIFT</button><button class="play ghost" id="showBoard">LEADERBOARD</button></div></div>
         <div class="modal" id="win" hidden><div class="card"><h3 id="winTitle">FARRIER FINESSE!</h3><p id="result">Clover trots away happy.</p><p class="rank-line" id="rankLine"></p><button class="play" id="again">PLAY AGAIN</button></div></div>
@@ -253,7 +257,7 @@ function applyLanguageBase(){document.documentElement.lang=lang;document.querySe
 function paintWallet(value){ui.money.textContent=cash(value);ui.score.textContent=cash(value)}
 function animateWallet(){if(walletRaf)return;let tick=()=>{let gap=money-walletDisplay;if(Math.abs(gap)<.005){walletDisplay=money;paintWallet(walletDisplay);walletRaf=0;return}walletDisplay+=gap*.24;paintWallet(walletDisplay);walletRaf=requestAnimationFrame(tick)};walletRaf=requestAnimationFrame(tick)}
 function changeMoney(delta,trackHorse=false){delta=Math.round(delta*100)/100;if(!delta)return;if(trackHorse)horseEarned=Math.round((horseEarned+delta)*100)/100;money=Math.round((money+delta)*100)/100;ui.walletGain.textContent=`${delta>0?'+':'−'}${cash(Math.abs(delta))}`;let state=delta>0?'earning':'spending';ui.moneyBox.classList.remove('earning','spending');void ui.moneyBox.offsetWidth;ui.moneyBox.classList.add(state);clearTimeout(walletPulseTimer);walletPulseTimer=setTimeout(()=>ui.moneyBox.classList.remove(state),720);animateWallet()}
-function updateCampaignUI(){let t=campaignCopy[lang];ui.day.textContent=`${t.day} ${day}/7`;ui.horse.textContent=`${t.day} ${day}/7 · ${started||dayHorses.length?horseName:t.horse} ${horseNumber}/5`;ui.moneyLabel.textContent=raceCopy[lang].money;ui.money.title=raceCopy[lang].money;if(!walletRaf){walletDisplay=money;paintWallet(walletDisplay)}ui.deadlineLabel.textContent=clockCopy[lang].clock;ui.deadlineBox.title=clockCopy[lang].clock;ui.deadlineBox.setAttribute('aria-label',clockCopy[lang].clock);ui.moneyBox.setAttribute('aria-label',raceCopy[lang].money);ui.deadline.textContent=formatTime(dayTimeLeft);ui.deadlineBox.classList.toggle('danger',dayTimeLeft<=60&&started);}
+function updateCampaignUI(){let t=campaignCopy[lang];ui.day.textContent=`${t.day} ${day}/7`;{let done=Math.min(5,dayHorses.length),key=`${day}-${done}-${started}-${lang}`;if(ui.horse.dataset.key!==key){ui.horse.dataset.key=key;ui.horse.setAttribute('aria-label',`${t.day} ${day}/7 · ${t.horse} ${horseNumber}/5`);ui.horse.title=`${t.day} ${day}/7 · ${t.horse} ${horseNumber}/5`;let shoe='<svg viewBox="0 0 9 9" aria-hidden="true" class="C"><path fill="currentColor" d="M1 0h7v2h-7zM0 1h2v7h-2zM7 1h2v7h-2zM0 8h3v1h-3zM6 8h3v1h-3z"/></svg>';ui.horse.innerHTML=`<span class="cal"><b>${day}</b><span class="pips">${Array.from({length:7},(_,i)=>`<i class="${i<day-1?'on':i===day-1?'now':''}"></i>`).join('')}</span></span><span class="shoes">${Array.from({length:5},(_,i)=>shoe.replace('C',i<done?'on':i===done&&started?'now':'')).join('')}</span>`}}ui.moneyLabel.textContent=raceCopy[lang].money;ui.money.title=raceCopy[lang].money;if(!walletRaf){walletDisplay=money;paintWallet(walletDisplay)}ui.deadlineLabel.textContent=clockCopy[lang].clock;ui.deadlineBox.title=clockCopy[lang].clock;ui.deadlineBox.setAttribute('aria-label',clockCopy[lang].clock);ui.moneyBox.setAttribute('aria-label',raceCopy[lang].money);ui.deadline.textContent=formatTime(dayTimeLeft);ui.deadlineBox.classList.toggle('danger',dayTimeLeft<=60&&started);}
 function renderModal(){let t=campaignCopy[lang],title=document.querySelector('#winTitle'),result=document.querySelector('#result'),button=document.querySelector('#again'),rank=document.querySelector('#rankLine');rank.textContent='';if(modalMode==='horse'){let h=dayHorses.at(-1);title.textContent=t.horseDone;result.textContent=h?raceCopy[lang].horseResult(h.name,h.quality,h.earned):'';button.textContent=t.nextHorse}else if(modalMode==='day'){title.textContent=t.dayDone;result.textContent=t.finishDay(day);button.textContent=t.nextDay}else if(modalMode==='fail'){title.textContent=clockCopy[lang].timeoutTitle;result.textContent=clockCopy[lang].timeout(day,horseNumber);button.textContent=t.retry;rank.textContent=lastRank?tr('rank')(lastRank):''}else{title.textContent=t.weekDone;result.textContent=t.week(cash(money));button.textContent=raceCopy[lang].continue;rank.textContent=lastRank?tr('rank')(lastRank):''}}
 function applyLanguage(){applyLanguageBase();updateCampaignUI();if(!ui.win.hidden)renderModal();if(!ui.review.hidden)renderDayReview();document.querySelector('#celebrationText').textContent=raceLiveCopy[lang].victory;if(!ui.race.hidden){document.querySelector('#raceTitle').textContent=raceCopy[lang].derby;if(!raceRunning)renderRaceResult()}if(!document.querySelector('#debtEnding').hidden)renderDebtEnding();if(!document.querySelector('#firedEnding').hidden)renderFiredEnding()}
 function localScores(){try{let v=JSON.parse(localStorage.getItem('hoofcraft-money-scores')||'[]');return Array.isArray(v)?v:[]}catch{return[]}}
