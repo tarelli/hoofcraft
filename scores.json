@@ -18,6 +18,12 @@
     "createdAt": "2026-11-15T02:40:13.242Z"
   },
   {
+    "id": "1794719438779-un6zh6kt1qd",
+    "name": "MATTEO",
+    "money": 7766.95,
+    "createdAt": "2026-11-15T05:10:39.825Z"
+  },
+  {
     "id": "1794713376948-bxthc2e9t6k",
     "name": "MATTEO",
     "money": 4471.1,
@@ -112,11 +118,5 @@
     "name": "MATTEO",
     "money": -2161.5,
     "createdAt": "2026-11-14T23:33:49.738Z"
-  },
-  {
-    "id": "1794698455451-uy0xa67y618",
-    "name": "MATTEO",
-    "money": -2172.15,
-    "createdAt": "2026-11-14T23:20:55.883Z"
   }
 ]
