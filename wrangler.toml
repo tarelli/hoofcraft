@@ -2,3 +2,11 @@ name = "hoofcraft-leaderboard"
 main = "worker/index.js"
 compatibility_date = "2026-11-14"
 
+
+# Optional, recommended before any real traffic: store scores in Cloudflare KV
+# instead of the GitHub file, which only allows a limited number of writes an hour.
+#   npx wrangler kv namespace create SCORES
+# then uncomment the block below with the id that command prints, and redeploy.
+# [[kv_namespaces]]
+# binding = "SCORES"
+# id = "PASTE_THE_ID_HERE"
