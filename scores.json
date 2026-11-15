@@ -24,6 +24,12 @@
     "createdAt": "2026-11-15T02:03:17.456Z"
   },
   {
+    "id": "1794712676001-zvd3daum7da",
+    "name": "GIOVACCHIA",
+    "money": 1370.9,
+    "createdAt": "2026-11-15T03:17:56.046Z"
+  },
+  {
     "id": "1794693907224-lzrb5rgluhg",
     "name": "MATTEO",
     "money": 1355.1,
@@ -112,11 +118,5 @@
     "name": "MATTEO",
     "money": -2176.65,
     "createdAt": "2026-11-14T22:40:04.973Z"
-  },
-  {
-    "id": "1794687581910-qkq1r4qb7tg",
-    "name": "MATTEO",
-    "money": -2187.15,
-    "createdAt": "2026-11-14T20:19:42.118Z"
   }
 ]
