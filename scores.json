@@ -1,5 +1,11 @@
 [
   {
+    "id": "1794708197399-xh6ypjhdg1",
+    "name": "MATTEO",
+    "money": 1775.15,
+    "createdAt": "2026-11-15T02:03:17.456Z"
+  },
+  {
     "id": "1794693907224-lzrb5rgluhg",
     "name": "MATTEO",
     "money": 1355.1,
@@ -112,11 +118,5 @@
     "name": "GIOVACCHIA",
     "money": -4464,
     "createdAt": "2026-11-14T20:22:26.726Z"
-  },
-  {
-    "id": "1794700328336-stb69n35oa",
-    "name": "MATTEO",
-    "money": -23166.75,
-    "createdAt": "2026-11-14T23:52:08.978Z"
   }
 ]
