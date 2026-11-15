@@ -62,14 +62,19 @@ function sortScores(value) {
       name: entry.name.trim().toUpperCase().replace(/[^A-Z0-9 _-]/g, '').slice(0, 10) || 'RIDER',
       money: Math.round(Number(entry.money) * 100) / 100,
       createdAt: String(entry.createdAt || new Date().toISOString()),
+      ...(entry.bad ? { bad: true } : {}),
     }))
     .sort((a, b) => b.money - a.money || a.name.localeCompare(b.name));
 }
 
-// Keep both ends of the table: the richest runs and the deepest debts.
+// Keep three tables: the richest farriers, the richest family men, and the deepest debts.
 function trimScores(scores) {
-  if (scores.length <= MAX_SCORES * 2) return scores;
-  return [...scores.slice(0, MAX_SCORES), ...scores.slice(-MAX_SCORES)];
+  const keep = new Set([
+    ...scores.filter(entry => !entry.bad).slice(0, MAX_SCORES),
+    ...scores.filter(entry => entry.bad).slice(0, MAX_SCORES),
+    ...scores.slice(-MAX_SCORES),
+  ]);
+  return scores.filter(entry => keep.has(entry));
 }
 
 async function readScores(token) {
@@ -130,6 +135,7 @@ export default {
           name,
           money: Math.round(money * 100) / 100,
           createdAt: new Date().toISOString(),
+          ...(body.bad === true ? { bad: true } : {}),
         });
         return json(request, result, 201);
       }
