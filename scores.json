@@ -1,5 +1,11 @@
 [
   {
+    "id": "1794894268692-9grprpzka2",
+    "name": "MATTEO",
+    "money": 787484.71,
+    "createdAt": "2026-11-17T05:44:28.928Z"
+  },
+  {
     "id": "1794712206856-hq4uizv2e16",
     "name": "MATTEO",
     "money": 167061.2,
@@ -112,11 +118,5 @@
     "name": "MATTEO",
     "money": -2121.38,
     "createdAt": "2026-11-15T00:43:30.451Z"
-  },
-  {
-    "id": "1794686736756-bh6yv9c4yrh",
-    "name": "MATTEO",
-    "money": -2157.45,
-    "createdAt": "2026-11-14T20:05:37.056Z"
   }
 ]
