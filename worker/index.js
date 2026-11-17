@@ -167,7 +167,7 @@ async function sessionAge(env, token) {
 function plausible(money, bad, ageMs) {
   const minutes = ageMs / 60000;
   const ceiling = bad ? Math.min(5000000, 100000 * minutes) : Math.min(1000000, 40000 * minutes);
-  return money >= -100000 && money <= ceiling;
+  return money >= -5000000 && money <= ceiling;
 }
 
 export default {
@@ -189,7 +189,7 @@ export default {
         const money = Number(body.money);
         const name = String(body.name || '').trim().toUpperCase().replace(/[^A-Z0-9 _-]/g, '').slice(0, 10);
         const id = String(body.id || '').replace(/[^a-zA-Z0-9._-]/g, '').slice(0, 80);
-        if (!name || !id || !Number.isFinite(money) || money < -100000 || money > 5000000) {
+        if (!name || !id || !Number.isFinite(money) || money < -5000000 || money > 5000000) {
           return json(request, { error: 'Invalid score' }, 400);
         }
         const bad = body.bad === true;
