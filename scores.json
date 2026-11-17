@@ -185,5 +185,12 @@
     "name": "MATTEO",
     "money": -23166.75,
     "createdAt": "2026-11-14T23:52:08.978Z"
+  },
+  {
+    "id": "1794919423576-z0pt6roolxo",
+    "name": "MATTEO",
+    "money": -27882,
+    "createdAt": "2026-11-17T12:43:43.696Z",
+    "bad": true
   }
 ]
