@@ -198,5 +198,12 @@
     "name": "GIOVACCHIA",
     "money": -222499,
     "createdAt": "2026-11-17T14:06:17.896Z"
+  },
+  {
+    "id": "manual-20261117-matteo-650195",
+    "name": "MATTEO",
+    "money": -650195.94,
+    "createdAt": "2026-11-17T14:07:16.362Z",
+    "bad": true
   }
 ]
