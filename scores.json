@@ -192,5 +192,11 @@
     "money": -27882,
     "createdAt": "2026-11-17T12:43:43.696Z",
     "bad": true
+  },
+  {
+    "id": "manual-20261117-giovacchia-222499",
+    "name": "GIOVACCHIA",
+    "money": -222499,
+    "createdAt": "2026-11-17T14:06:17.896Z"
   }
 ]
