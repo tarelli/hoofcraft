@@ -31,6 +31,13 @@
     "createdAt": "2026-11-15T02:40:13.242Z"
   },
   {
+    "id": "1795559331090-9xrw9hq30c5",
+    "name": "DARIO",
+    "money": 11264,
+    "createdAt": "2026-11-24T22:28:51.257Z",
+    "bad": true
+  },
+  {
     "id": "1795118451978-2rs2uwp82wn",
     "name": "MATTEO",
     "money": 8177,
